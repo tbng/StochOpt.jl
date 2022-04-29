@@ -1,8 +1,0 @@
-YearPredictionMSD_full
-slice
-covtype_binary
-rcv1_full
-news20_binary
-real-sim
-ijcnn1_full
-

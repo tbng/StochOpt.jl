@@ -1,3 +1,0 @@
-abalone
-YearPredictionMSD_full
-australian
