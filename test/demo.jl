@@ -11,7 +11,7 @@ options.batchsize = 100;
 probname = "random"; # Data tested in paper: w8a mushrooms gisette_scale,  madelon  a9a  phishing  covtype splice  rcv1_train  liver-disorders_scale
 X = randn((10, 200))
 y = rand((-1., 1.), 200)
-prob = load_logistic_from_matrices(data_path, probname, options);
+prob = load_logistic_from_matrices(X, y, probname, options);
 
 ## Running methods
 OUTPUTS = [];  # List of saved outputs
