@@ -1,10 +1,11 @@
 module StochOpt
 
 # The types exported
-#export MyOptions, Prob, Method, Output
+export MyOptions, Prob, Method, Output
 # The exported functions
-#export pseudoinvert_matrix, uniform_mat_rank, uniform_sym_rank
-#export plot_outputs_Plots
+export set_options
+export load_logistic, load_logistic_from_matrices
+export minimizeFunc, initiate_SAGA
 
 using SparseArrays
 using LinearAlgebra
