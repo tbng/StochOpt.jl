@@ -5,7 +5,7 @@ export MyOptions, Prob, Method, Output
 # The exported functions
 export set_options
 export load_logistic, load_logistic_from_matrices
-export minimizeFunc, initiate_SAGA
+export minimizeFunc, minimizeFunc_grid_stepsize, initiate_SAGA
 
 using SparseArrays
 using LinearAlgebra
