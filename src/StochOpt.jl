@@ -1,3 +1,5 @@
+module StochOpt
+
 # The types exported
 #export MyOptions, Prob, Method, Output
 # The exported functions
@@ -7,6 +9,7 @@
 using SparseArrays
 using LinearAlgebra
 using Printf
+using Match
 using Random
 using Distributions
 using LaTeXStrings
@@ -376,7 +379,7 @@ end
 #Functions for getting and manipulating data
 include("dataLoad.jl")
 include("data_generation.jl")
-include("logistic_defintions.jl") # includes all functions and definitions pertaining to logistic regression
+include("logistic_definitions.jl") # includes all functions and definitions pertaining to logistic regression
 include("load_ridge_regression.jl")
 #Including method wrappers
 include("minimizeFunc.jl") # minimizing a given prob::Prob using a method
@@ -417,4 +420,7 @@ include("SVRG_settings_and_util.jl")
 include("get_saved_stepsize.jl")
 # include("../tmp/parallel_minimizeFunc_grid_stepsize.jl")
 
-methodswithareset = [SVRG_vanilla_method, Free_SVRG_method, SAGA_nice_method] 
+methodswithareset = [SVRG_vanilla_method, Free_SVRG_method, SAGA_nice_method]
+
+
+end  # module

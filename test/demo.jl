@@ -1,15 +1,17 @@
 using Plots
 using JLD, StatsBase, Match
-include("../src/StochOpt.jl")
+using StochOpt
+
 ## This is a basic demo showing how to setup and call different optimization methods for the ERM problem
 ## Basic parameters and options for solvers
 options = set_options(max_iter=10^8, max_time=2.0, max_epocs=50, force_continue=true, initial_point="randn"); #repeat_stepsize_calculation =true, rep_number =10
 options.batchsize = 100;
-## load problem
-data_path = "./data/"
-probname = "mushrooms"; # Data tested in paper: w8a mushrooms gisette_scale,  madelon  a9a  phishing  covtype splice  rcv1_train  liver-disorders_scale
-## Loads logisitc problem
-prob = load_logistic(data_path, probname, options);
+
+## Loads logistic problem
+probname = "random"; # Data tested in paper: w8a mushrooms gisette_scale,  madelon  a9a  phishing  covtype splice  rcv1_train  liver-disorders_scale
+X = randn((10, 200))
+y = rand((-1., 1.), 200)
+prob = load_logistic_from_matrices(data_path, probname, options);
 
 ## Running methods
 OUTPUTS = [];  # List of saved outputs
