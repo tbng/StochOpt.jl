@@ -1,3 +1,6 @@
+using Match
+
+
 function boot_method(method_name::AbstractString, prob::Prob, options::MyOptions)
     ## Loading an empty method class with standard boot options
     # Lmax = maximum(sum(prob.X.^2, dims=1)) + prob.lambda; # Estimate stepsize using Lmax estimate
@@ -60,7 +63,7 @@ function boot_method(method_name::AbstractString, prob::Prob, options::MyOptions
     # method =  eval(Meta.parse(string("boot_",method_name,"(prob, method, options)"))); # in julia 0.7
 
     @match method_name begin
-        "SAGA_nice"  => (method = boot_SAGA_nice(prob, method, options))
+        "SAGA_nice"  => (method = boot_SAGA_nice!(prob, method, options))
         "SVRG"       => (method = boot_SVRG(prob, method, options))
         "SVRG2"      => (method = boot_SVRG2(prob, method, options))
         "2D"         => (method = boot_2D(prob, method, options))
