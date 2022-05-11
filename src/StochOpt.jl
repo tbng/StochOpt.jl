@@ -392,7 +392,7 @@ include("samplings.jl")
 #Including test and problem generating functions
 include("testing.jl")
 #Including iterative methods for calculating search direction
-allmethods = ["Leap_SVRG", "L_SVRG_D", "L_SVRG", "SVRG_bubeck", "SVRG_vanilla", "SAGA_nice!", "SPIN", "SAGA", "SVRG", "SVRG2",  "2D", "2Dsec", "CMcoord", "CMgauss", "CMprev", "AMgauss","AMprev", "AMcoord", "BFGS", "BFGS_accel", "grad"]
+allmethods = ["Leap_SVRG", "L_SVRG_D", "L_SVRG", "SVRG_bubeck", "SVRG_vanilla", "SAGA_nice!", "SPIN", "SAGA", "SVRG", "SVRG2",  "2D", "2Dsec", "CMcoord", "CMgauss", "CMprev", "AMgauss","AMprev", "AMcoord", "BFGS", "BFGS_accel", "grad", "Free_SVRG"]
 recentmethods = ["Leap_SVRG", "L_SVRG_D", "L_SVRG", "SVRG_bubeck", "Free_SVRG", "SVRG_vanilla", "SAGA_nice"]
 for method in allmethods
     if method in recentmethods
